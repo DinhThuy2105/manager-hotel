@@ -137,7 +137,7 @@ body#home_one .emergency_number::after {
     padding: 0;
     left: 0;
     right: auto !important;
-    top: 165.6%;
+    top: 100%;
 }
 
 #menu2.dropdown-menu>li:first-child>a,

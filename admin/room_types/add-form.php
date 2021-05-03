@@ -11,6 +11,7 @@ $roomSerives = queryExecute($getRoomSerives, true);
 
 <head>
     <?php include_once '../_share/style.php'; ?>
+    <script src="https://cdn.tiny.cloud/1/09n2cu8687a01c6pb501sbldantk25a45y32kbe1uneb85j4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -134,6 +135,22 @@ $roomSerives = queryExecute($getRoomSerives, true);
     <!-- ./wrapper -->
     <?php include_once '../_share/script.php'; ?>
     <script>
+        // Tinymce
+        tinymce.init({
+            selector: '#short_descript',
+            height: 350,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_css: '//www.tiny.cloud/css/codepen.min.css'
+        });
         //Initialize Select2 Elements
         $('.select2').select2();
 

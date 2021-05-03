@@ -51,7 +51,7 @@ $otherRooms = queryExecute($getOtherRooms, true);
         <div class="container-fluid">
             <div class="row">
                 <div class="breadcrumb_main nice_title">
-                    <h2>Accomodation</h2>
+                    <h2>Đặt phòng</h2>
                     <!-- special offer start -->
                     <div class="special_offer_main">
                         <div class="container">
@@ -74,7 +74,7 @@ $otherRooms = queryExecute($getOtherRooms, true);
             <div class="row">
                 <div class="select_room clearfix">
                     <div class="section_title nice_title text-center">
-                        <h3>Special Rooms</h3>
+                        <h3>Phòng đặc biệt</h3>
                     </div>
                     <div class="select_room_content special-room">
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -143,7 +143,7 @@ $otherRooms = queryExecute($getOtherRooms, true);
             <div class="row">
                 <div class="other_room">
                     <div class="section_title nice_title content-center">
-                        <h3>Other Decent room</h3>
+                        <h3>Các loại phòng khác</h3>
                     </div>
                     <div class="section_content">
                         <!-- start single room details -->
@@ -163,7 +163,7 @@ $otherRooms = queryExecute($getOtherRooms, true);
                                                             <p>$<?= $room['price'] ?>/ <span>night</span></p>
                                                         </div>
                                                         <div class="left_room_title floatright">
-                                                            <a href="<?= BASE_URL . 'room-details.php?id=' . $room['id'] ?>" class="btn">Book</a>
+                                                            <a href="<?= BASE_URL . 'room-details.php?id=' . $room['id'] ?>" class="btn btn-rounder">Book</a>
                                                         </div>
                                                     </div>
                                                     <div class="uk-overlay-panel uk-overlay-background single_wrapper_details clearfix animated bounceInDown">

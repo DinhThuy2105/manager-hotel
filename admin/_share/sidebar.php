@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../../index.php" class="brand-link">
-        <img src="<?= PUBLIC_URL . 'img/logo.png' ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="<?= PUBLIC_URL . 'img/logo.png' ?>" alt="AdminLTE Logo" class="brand-image img-circle" style="opacity: .8">
         <span class="brand-text font-weight-light">Hotel Booking</span>
     </a>
 
@@ -78,53 +78,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="fal fa-address-card nav-icon"></i>
-                        <p>
-                            Quản lý liên hệ
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'contacts' ?>" class="nav-link">
-                                <i class="fa fa-list-ol nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'contacts/list-contacted.php' ?>" class="nav-link">
-                                <i class="fas fa-info nav-icon" aria-hidden="true"></i>
-                                <p>Đã trả lời</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-comment-alt-dots"></i>
-                        <p>
-                            Quản lý phản hồi
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'customer_feedbacks' ?>" class="nav-link">
-                                <i class="fa fa-list-ol nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'customer_feedbacks/add-form.php' ?>" class="nav-link">
-                                <i class="fa fa-plus nav-icon" aria-hidden="true"></i>
-                                <p>Thêm feedbacks</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fal fa-spa"></i>
+                        <i class="fas fa-concierge-bell nav-icon"></i>
                         <p>
                             Quản lý dịch vụ
                             <i class="fas fa-angle-left right"></i>
@@ -143,29 +97,6 @@
                                 <p>Thêm dịch vụ</p>
                             </a>
                         </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-cogs"></i>
-                        <p>
-                            Quản lý cài đặt
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'web_settings' ?>" class="nav-link">
-                                <i class="fa fa-list-ol nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'web_settings/edit-form.php' ?>" class="nav-link">
-                                <i class="fa fa-plus nav-icon" aria-hidden="true"></i>
-                                <p>Sửa web-settings</p>
-                            </a>
-                        </li> -->
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
@@ -216,29 +147,6 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fad fa-images"></i>
-                        <p>
-                            Bộ sưu tập ảnh
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'room_galleries' ?>" class="nav-link">
-                                <i class="fa fa-list-ol nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'room_galleries/add-form.php' ?>" class="nav-link">
-                                <i class="fa fa-plus nav-icon" aria-hidden="true"></i>
-                                <p>Thêm loại phòng</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
                         <i class="nav-icon fal fa-bed-bunk"></i>
                         <p>
                             Đặt phòng
@@ -256,17 +164,23 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fad fa-photo-video"></i>
+                        <i class="nav-icon far fa-cogs"></i>
                         <p>
-                            Banner Slice
+                            Quản lý cài đặt
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?= ADMIN_URL . 'banner_slice' ?>" class="nav-link">
+                        <!-- <li class="nav-item">
+                            <a href="<?= ADMIN_URL . 'web_settings' ?>" class="nav-link">
                                 <i class="fa fa-list-ol nav-icon"></i>
-                                <p>Danh sách banner</p>
+                                <p>Danh sách</p>
+                            </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="<?= ADMIN_URL . 'web_settings/edit-form.php?id=1' ?>" class="nav-link">
+                                <i class="fa fa-plus nav-icon" aria-hidden="true"></i>
+                                <p>Cài đặt</p>
                             </a>
                         </li>
                     </ul>

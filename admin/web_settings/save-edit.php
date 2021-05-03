@@ -4,7 +4,6 @@ include_once "../../config/utils.php";
 checkAdminLoggedIn();
 // lấy thông tin từ form gửi lên
 $id = trim($_POST['id']);
-$name = trim($_POST['name']);
 $status = trim($_POST['status']);
 $email = trim($_POST['email']);
 $phone_number = trim($_POST['phone_number']);
@@ -15,11 +14,10 @@ $facebook_url = trim($_POST['facebook_url']);
 $instagram_url = trim($_POST['instagram_url']);
 $explore_url = trim($_POST['explore_url']);
 $introduce_welcome = trim($_POST['introduce_welcome']);
-$logo = $_FILES['logo'];
+$logo = $_FILES['logo_url'];
 $offer = $_FILES['offer'];
 
 // validate bằng php
-$nameerr = "";
 $phone_numbererr= "";
 $emailerr = "";
 $addresserr = "";
@@ -29,10 +27,6 @@ $instagram_urlerr = "";
 $explore_urlerr = "";
 $instroduce_welcomeerr = "";
 
-// check name
-if(strlen($name) < 2 || strlen($name) > 191){
-    $nameerr = "Yêu cầu nhập tên tài khoản nằm trong khoảng 2-191 ký tự";
-}
 
 if (strlen($phone_number) !== 10) {
     $phone_numbererr = "Số điện thoại gồm 10 chữ số";
@@ -72,7 +66,6 @@ if($offer['size'] > 0){
 
 $updateSettingQuery = "update web_settings
                     set
-                          name = '$name',
                           status = '$status',
                           email = '$email',
                           phone_number = '$phone_number',
@@ -87,5 +80,5 @@ $updateSettingQuery = "update web_settings
                           introduce_welcome = '$introduce_welcome'
                     where id = $id";
 queryExecute($updateSettingQuery, false);
-header("location: " . ADMIN_URL . "web_settings");
+header("location: " . ADMIN_URL . "web_settings/edit-form.php?id=1");
 die;

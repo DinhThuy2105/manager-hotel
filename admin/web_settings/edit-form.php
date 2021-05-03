@@ -70,7 +70,7 @@ if ($_SESSION[AUTH]['role_id'] < 2) {
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Cập nhật thông tin web setting</h1>
+                            <h1 class="m-0 text-dark">Cập nhật thông tin</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -86,13 +86,6 @@ if ($_SESSION[AUTH]['role_id'] < 2) {
                         <div class="row">
                             <!-- First column -->
                             <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="name">Tên web setting<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="name" name="name" value="<?= $webSettings['name'] ?>">
-                                    <?php if (isset($_GET['nameerr'])) : ?>
-                                        <label class="error"><?= $_GET['nameerr'] ?></label>
-                                    <?php endif; ?>
-                                </div>
                                 <div class="form-group">
                                     <label for="name">Email web setting<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="email" id="email" value="<?= $webSettings['email'] ?>">

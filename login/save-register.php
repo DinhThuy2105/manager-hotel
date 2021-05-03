@@ -3,19 +3,24 @@ session_start();
 include_once "../config/utils.php";
 
 $name = trim($_POST['name']);
+$phone = trim($_POST['phone']);
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
 $cfpassword = trim($_POST['cfpassword']);
 
 // validate bằng php
 $nameerr = "";
+$phoneerr = "";
 $emailerr = "";
 $passworderr = "";
 // check name
 if (strlen($name) < 2 || strlen($name) > 191) {
     $nameerr = "Yêu cầu nhập tên tài khoản nằm trong khoảng 2-191 ký tự";
 }
-
+// check phone
+if (strlen($phone) < 2 || strlen($phone) > 191) {
+    $phoneerr = "Yêu cầu nhập số điện thoại đủ 10 số";
+}
 // check email
 if (strlen($email) == 0) {
     $emailerr = "Yêu cầu nhập email!";
@@ -40,8 +45,8 @@ if ($passworderr == "" && $password != $cfpassword) {
     $passworderr = "Mật khẩu và nhập lại mật khẩu";
 }
 
-if ($nameerr . $emailerr . $passworderr != "") {
-    header('location: ' . LOGIN_URL . "register.php?nameerr=$nameerr&emailerr=$emailerr&passworderr=$passworderr");
+if ($nameerr .$phoneerr . $emailerr . $passworderr != "") {
+    header('location: ' . LOGIN_URL . "register.php?nameerr=$nameerr&emailerr=$emailerr&passworderr=$passworderr&phoneerr=$phoneerr");
     die;
 }
 
@@ -55,7 +60,7 @@ $messages = "Từ giờ bạn có thể đăng nhập được rồi";
 $insertUserQuery = "insert into users
                           (name, password, email, role_id, phone_number, avatar)
                     values
-                          ('$name', '$password', '$email', '$role_id', '$phone_number', '$filename')";
+                          ('$name', '$password', '$email', '$role_id', '$phone', '$filename')";
 // dd($insertUserQuery);
 queryExecute($insertUserQuery, false);
 header("location: " . LOGIN_URL . "login.php?messages=$messages&style=none");

@@ -14,7 +14,11 @@ $getServiceQuery = "select s.id, s.name
                         on sxr.services_id = s.id
                     where sxr.room_id = " . $roomTypes['id'];
 $services = queryExecute($getServiceQuery, true);
-$roomTypes['room_sv'] = $services;
+$arr = [];
+foreach($services as $service){
+    $arr[] = $service['id'];
+};
+$roomTypes['room_sv'] = $arr;
 
 $getServices = "select * from room_services where status = 1";
 $allServices = queryExecute($getServices, true);
@@ -38,6 +42,7 @@ $allServices = queryExecute($getServices, true);
             reader.readAsDataURL(file);
         }
     </script>
+    <script src="https://cdn.tiny.cloud/1/09n2cu8687a01c6pb501sbldantk25a45y32kbe1uneb85j4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -120,11 +125,12 @@ $allServices = queryExecute($getServices, true);
                                 <div class="form-group">
                                     <label for="">Dịch vụ phòng</label>
                                     <select name="service[]" class="form-control select2" multiple="multiple" data-placeholder="Chọn dịch vụ phòng">
-                                        <?php foreach ($room['room_sv'] as $ser) : ?>
-                                            <option value="<?= $ser['id'] ?>" selected><?= $ser['name'] ?></option>
-                                        <?php endforeach ?>
                                         <?php foreach ($allServices as $sers) : ?>
-                                            <option value="<?= $sers['id'] ?>"><?= $sers['name'] ?></option>
+                                            <?php if(!in_array($sers['id'],$roomTypes['room_sv'])){  ?>
+                                                <option value="<?= $sers['id'] ?>"><?= $sers['name'] ?></option>
+                                            <?php } else { ?>
+                                                <option value="<?= $sers['id'] ?>" selected><?= $sers['name'] ?></option>
+                                            <?php } ?>
                                         <?php endforeach ?>
                                     </select>
                                 </div>
@@ -166,6 +172,22 @@ $allServices = queryExecute($getServices, true);
     <!-- ./wrapper -->
     <?php include_once '../_share/script.php'; ?>
     <script>
+        // Tinymce
+        tinymce.init({
+            selector: '#short_descript',
+            height: 350,
+            menubar: false,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_css: '//www.tiny.cloud/css/codepen.min.css'
+        });
         //Initialize Select2 Elements
         $('.select2').select2();
 

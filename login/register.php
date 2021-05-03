@@ -48,20 +48,30 @@ require_once "../config/utils.php";
                     </div>
                 </div>
                 <div class="row">
-                    <div class="form-group col-6">
+                    <div class="form-group col-4">
+                        <label for="name">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phoneUser" name="phone" placeholder="Nhập họ và tên" onchange="setData('phoneUser', this.value);">
+                        <?php if (isset($_GET['phoneerr'])) : ?>
+                            <label class="error"><?= $_GET['phoneerr'] ?></label>
+                        <?php endif; ?>
+                    </div>
+                    <div class="form-group col-4">
                         <label for="password">Mật khẩu</label>
                         <input type="password" class="form-control" id="main-password" name="password" autocomplete="off" placeholder="Nhập mật khẩu">
                         <?php if (isset($_GET['passworderr'])) : ?>
                             <label class="error"><?= $_GET['passworderr'] ?></label>
                         <?php endif; ?>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-4">
                         <label for="cfpassword">Nhập lại mật khẩu</label>
                         <input type="password" class="form-control" name="cfpassword" autocomplete="off" placeholder="Nhập lại mật khẩu">
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-warning">Xác nhận đăng ký</button>&nbsp;
+                <div class="form-group">
+					<a href="<?= LOGIN_URL . 'login.php' ?>" class="text-danger hidden text-center"><ins>Đã có tài khoản, đăng nhập ?</ins></a>&nbsp;
+				</div>
+                <div class="d-flex justify-content-center mt-3">
+                    <button type="submit" class="btn btn-success">Xác nhận đăng ký</button>&nbsp;
                     <a href="<?php echo BASE_URL ?>" id="btnCancel" class="btn btn-danger">Hủy</a>
                 </div>
             </form>
@@ -115,6 +125,11 @@ require_once "../config/utils.php";
                 name: {
                     required: true,
                     maxlength: 191
+                },
+                phone: {
+                    required: true,
+                    maxlength: 10,
+                    maxlength: 10
                 }
             },
 
@@ -136,6 +151,11 @@ require_once "../config/utils.php";
                 name: {
                     required: "Nhập tên bạn vào đây",
                     maxlength: "Độ dài tối đa là 191 ký tự"
+                },
+                name: {
+                    required: "Nhập SĐT bạn vào đây",
+                    minlength: "Số điện thoại có 10 sô",
+                    maxlength: "Số điện thoại có 10 sô"
                 }
             }
         });

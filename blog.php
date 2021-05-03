@@ -50,7 +50,7 @@ $recentPost = queryExecute($getRecentPost, true);
         <div class="container-fluid">
             <div class="row">
                 <div class="breadcrumb_main nice_title">
-                    <h2>News</h2>
+                    <h2>Tin tức</h2>
                     <!-- special offer start -->
                     <div class="special_offer_main">
                         <div class="container">
@@ -80,7 +80,7 @@ $recentPost = queryExecute($getRecentPost, true);
                                         <div class="post_figure_and_info">
                                             <div class="post_sub"><a href="#"><span class="post_info post_author"><?= $news['author_id'] ?></span></a><a href="#22"><span class="post_info post_categories">Suites</span></a><a href="#"><span class="post_info post_comment"> <i class="fad fa-comment"></i>12 </span></a></div>
                                         </div>
-                                        <p class="text-justify"><?= substr($news['news_content'], 0, 400) ?></p><a href="<?= BASE_URL . 'single.php?id=' . $news['id'] ?>" class="btn btn-primary">Read More</a>
+                                        <p class="text-justify"><?= substr($news['news_content'], 0, 400) ?></p><a href="<?= BASE_URL . 'single.php?id=' . $news['id'] ?>" class="btn btn-primary">Đọc thêm</a>
                                     </div>
                                 </figure>
                             </article>
@@ -121,12 +121,12 @@ $recentPost = queryExecute($getRecentPost, true);
                     <aside class="widget widget_search small_screen_margin_top_half">
                         <form id="s" method="get" name="s" action="#">
                             <div class="input-group">
-                                <input id="search" name="s" type="text" placeholder="SEARCH" class="form-control"><i class="icon icon-Search"></i>
+                                <input id="search" name="s" type="text" placeholder="TÌM KIẾM" class="form-control"><i class="icon icon-Search"></i>
                             </div>
                         </form>
                     </aside>
                     <aside class="widget widget_latest_posts">
-                        <h4>RECENT POSTS</h4>
+                        <h4>Các bài viết gần đây</h4>
                         <?php foreach ($recentPost as $recent) : ?>
                             <div class="row">
                                 <div class="col-4">
@@ -138,49 +138,6 @@ $recentPost = queryExecute($getRecentPost, true);
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                    </aside>
-                    <aside class="widget widget_categories">
-                        <h4>CATEGORIES</h4>
-                        <ul>
-                            <li><a href="#!">Services<small>7</small></a></li>
-                            <li><a href="#!">Accomondation<small>12</small></a></li>
-                            <li><a href="#!">Room &amp; suite<small>3</small></a></li>
-                            <li><a href="#!">Spa &amp; gym<small>2</small></a></li>
-                            <li><a href="#!">Pool &amp; swim<small>9</small></a></li>
-                        </ul>
-                    </aside>
-                    <!-- <aside class="widget widget_tags">
-                        <h4>TAGS</h4>
-                        <ul>
-                            <li><a href="#!">HOTEL</a></li>
-                            <li><a href="#!">SERVICES</a></li>
-                            <li><a href="#!">ROOM</a></li>
-                            <li><a href="#!">QUALITY</a></li>
-                            <li><a href="#!">POOL</a></li>
-                            <li><a href="#!">LUXURY</a></li>
-                            <li><a href="#!">GYM</a></li>
-                            <li><a href="#!">BOOKING</a></li>
-                            <li><a href="#!">SPA</a></li>
-                            <li><a href="#!">GOLF</a></li>
-                            <li><a href="#!">FOOTBALL</a></li>
-                            <li><a href="#!">TV</a></li>
-                            <li><a href="#!">WIFI</a></li>
-                        </ul>
-                    </aside> -->
-                    <aside class="widget widget_recent_comments">
-                        <h4>RECENT COMMENTS</h4>
-                        <div class="media">
-                            <div class="media-left media-middle pull-left"><a href="#"><i class="icon icon-Pen"></i></a></div>
-                            <div class="media-body"><span>Mike Willmadeit</span><a href="#"><span>Quality services</span></a></div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left media-middle pull-left"><a href="#"><i class="icon icon-Pen"></i></a></div>
-                            <div class="media-body"><span>Jessica Simpson</span><a href="#"><span>Hello World</span></a></div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left media-middle pull-left"><a href="#"><i class="icon icon-Pen"></i></a></div>
-                            <div class="media-body"><span>Jimmy Henrdax</span><a href="#"><span>We do love what we do</span></a></div>
-                        </div>
                     </aside>
                     <!-- END======================== SIDEBAR ==========================-->
                 </div>

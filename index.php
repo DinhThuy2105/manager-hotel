@@ -55,13 +55,13 @@ $roomTypes = queryExecute($getRoomTypesQuery, true);
                             </div>
                             <div class="form-group col-lg-2 col-md-2 col-sm-2">
                                 <div class="input-group border-bottom-dark-2">
-                                    <input class="date-picker" id="datepicker" placeholder="Arrival" name="arrival" type="text" />
+                                    <input class="date-picker" id="datepicker" placeholder="Ngày đến" name="arrival" type="text" />
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                 </div>
                             </div>
                             <div class="form-group col-lg-2 col-md-2 col-sm-2">
                                 <div class="input-group border-bottom-dark-2">
-                                    <input class="date-picker" id="datepicker1" placeholder="Departure" name="departure" type="text" />
+                                    <input class="date-picker" id="datepicker1" placeholder="Ngày đi" name="departure" type="text" />
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@ $roomTypes = queryExecute($getRoomTypesQuery, true);
                                             <p>$<?=$room['price']?>/ <span>night</span></p>
                                         </div>
                                         <div class="left_room_title floatright">
-                                            <a href="<?=BASE_URL . 'room-details.php?id=' . $room['id']?>" class="btn">Book</a>
+                                            <a href="<?=BASE_URL . 'room-details.php?id=' . $room['id']?>" class="btn btn-rounder">Book</a>
                                         </div>
                                     </div>
                                     <div class="uk-overlay-panel uk-overlay-background single_wrapper_details clearfix animated bounceInDown">
@@ -186,27 +186,27 @@ $roomTypes = queryExecute($getRoomTypesQuery, true);
         <div class="container">
             <div class="hotel_facilities">
                 <div class="section_title nice_title content-center">
-                    <h3>Hotel services</h3>
+                    <h3>Dịch vụ của khách sạn</h3>
                 </div>
                 <div class="hotel_facilities_content">
                     <div role="tabpanel">
 
                         <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active">
-                                <a href="#sports-club" aria-controls="sports-club" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-seven.png" alt="sports-club"><span>sports-club</span></a>
+                        <ul class="nav nav-tabs" role="tablist" style="height:120px">
+                            <li role="presentation" class="active" style="height: 100%">
+                                <a href="#sports-club" style="height: 100%" aria-controls="sports-club" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-seven.png" alt="sports-club"><span>Câu lạc bộ thể thao</span></a>
                             </li>
-                            <li role="presentation">
-                                <a href="#restaurant" aria-controls="restaurant" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-eleven.png" alt="restaurant"><span>restaurant</span></a>
+                            <li role="presentation" style="height: 100%">
+                                <a href="#restaurant" style="height: 100%" aria-controls="restaurant" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-eleven.png" alt="restaurant"><span>Nhà hàng</span></a>
                             </li>
-                            <li role="presentation">
-                                <a href="#pick-up" aria-controls="pick-up" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-eight.png" alt="pick-up"><span>pick-up</span></a>
+                            <li role="presentation" style="height: 100%">
+                                <a href="#pick-up" style="height: 100%" aria-controls="pick-up" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-eight.png" alt="pick-up"><span>Phương tiện</span></a>
                             </li>
-                            <li role="presentation">
-                                <a href="#bar" aria-controls="bar" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-nine.png" alt="bar"><span>bar</span></a>
+                            <li role="presentation" style="height: 100%">
+                                <a href="#bar" style="height: 100%" aria-controls="bar" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-nine.png" alt="bar"><span>Quán bar</span></a>
                             </li>
-                            <li role="presentation">
-                                <a href="#gym" aria-controls="gym" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-ten.png" alt="gym"><span>gym</span></a>
+                            <li role="presentation" style="height: 100%">
+                                <a href="#gym" style="height: 100%" aria-controls="gym" role="tab" data-toggle="tab"><img src="./public/img/home-facilities-icon-ten.png" alt="gym"><span>Phòng tập gym</span></a>
                             </li>
                         </ul>
 
@@ -243,10 +243,10 @@ $roomTypes = queryExecute($getRoomTypesQuery, true);
     <section class="about_us_area margin-bottom-128">
         <div class="container">
             <div class="about_us clearfix">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 padding-left-0">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 padding-left-0">
                     <div class="news">
                         <div class="section_title margin-bottom-50">
-                            <h5>News</h5>
+                            <h5>Tin tức</h5>
                         </div>
                         <div class="section_description">
                             <div class="row">
@@ -273,10 +273,10 @@ $roomTypes = queryExecute($getRoomTypesQuery, true);
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                     <div class="showcase">
                         <div class="section_title margin-bottom-50">
-                            <h5>Hotel Showcase</h5>
+                            <h5>Album ảnh</h5>
                         </div>
                         <div class="section_description">
                             <div class="clearfix demo">
@@ -287,47 +287,6 @@ $roomTypes = queryExecute($getRoomTypesQuery, true);
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="customer_says">
-                        <div class="section_title margin-bottom-50">
-                            <h5>Customer Says</h5>
-                        </div>
-                        <div class="section_description">
-                            <div id="customer_says_slider" class="carousel slide" data-ride="carousel" data-pause="none">
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    <?php foreach ($feedbacks as $feedback) : ?>
-                                        <div class="item <?php if ($feedback['active'] == 1) : ?> active <?php endif; ?>">
-                                            <div class="single_says">
-                                                <div class="customer_comment">
-                                                    <?= $feedback['content'] ?>
-                                                </div>
-                                                <div class="customer_detail clearfix">
-                                                    <div class="customer_pic alignleft-20">
-                                                        <a href="#"><img src="<?= $feedback['avatar'] ?>" alt="" width="50"></a>
-                                                    </div>
-                                                    <div class="customer_identity floatleft">
-                                                        <h6><?= $feedback['name'] ?></h6>
-                                                        <p><?= $feedback['address'] ?></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                                <!-- Controls -->
-                                <a class="slider_says left" href="#customer_says_slider" role="button" data-slide="prev">
-                                    <i class="fa fa-angle-left"></i>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="slider_says right" href="#customer_says_slider" role="button" data-slide="next">
-                                    <i class="fa fa-angle-right"></i>
-                                    <span class="sr-only">Next</span>
-                                </a>
                             </div>
                         </div>
                     </div>

@@ -112,6 +112,10 @@ a:hover {
   font-size: 14px;
   padding: 8px 17px;
 }
+.btn-rounder {
+  border-radius: 10px;
+  margin-right: 10px;
+}
 a.btn:hover {
   background: #63c2ea;
   color: #fff;

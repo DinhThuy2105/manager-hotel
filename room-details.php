@@ -130,7 +130,7 @@ $roomGalleries = queryExecute($getRoomGalleriesQuery, true);
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="welcome">
                                                     <div class="section_title content-left margin-top-50 margin-bottom-30">
-                                                        <h5>You may Also like</h5>
+                                                        <h5>Những phòng khác</h5>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-lg-4 col-md-4 col-sm-4">
@@ -209,18 +209,18 @@ $roomGalleries = queryExecute($getRoomGalleriesQuery, true);
                                     <div class="col-lg-12 col-md-12">
                                         <input type="hidden" name="roomId" value="<?= $roomTypes['id'] ?>">
                                         <div class="room_book">
-                                            <p>Đặt phòng ngay</p>
+                                            <p>Đặt phòng</p>
                                         </div>
                                     </div>
                                     <div class="form-group col-lg-12 col-md-12">
                                         <div class="input-group border-bottom-dark-2">
-                                            <input class="date-picker" id="datepicker" type="text" name="arrival" value="<?= $arrival ?>" />
+                                            <input required class="date-picker" placeholder="Ngày đến" id="datepicker" type="text" name="arrival" value="<?= $arrival ?>" />
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group col-lg-12 col-md-12">
                                         <div class="input-group border-bottom-dark-2">
-                                            <input class="date-picker" id="datepicker1" type="text" name="departure" value="<?= $departure ?>" />
+                                            <input required class="date-picker" placeholder="Ngày đi" id="datepicker1" type="text" name="departure" value="<?= $departure ?>" />
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
@@ -228,7 +228,7 @@ $roomGalleries = queryExecute($getRoomGalleriesQuery, true);
                                         <div class="row">
                                             <div class="form-group col-lg-6 col-md-6 icon_arrow">
                                                 <div class="input-group border-bottom-dark-2">
-                                                    <select class="form-control" name="room" id="room">
+                                                    <select class="form-control" name="room" id="room" required>
                                                         <option selected="selected" disabled="disabled">Số phòng</option>
                                                         <option value="1">1 phòng</option>
                                                         <option value="2">2 phòng</option>
@@ -239,7 +239,7 @@ $roomGalleries = queryExecute($getRoomGalleriesQuery, true);
                                             </div>
                                             <div class="form-group col-lg-6 col-md-6 icon_arrow">
                                                 <div class="input-group border-bottom-dark-2">
-                                                    <select class="form-control" name="bed" id="bed">
+                                                    <select class="form-control" name="bed" id="bed" required>
                                                         <option selected="selected" disabled="disabled">Số giường</option>
                                                         <option value="1">1 giường</option>
                                                         <option value="2">2 giường</option>
@@ -272,81 +272,14 @@ $roomGalleries = queryExecute($getRoomGalleriesQuery, true);
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12">
-                                        <button type="submit" class="btn btn-warning btn-md">Book</button>
+                                    <div class="col-lg-12 col-md-12 text-center">
+                                        <button type="submit" class="btn btn-warning btn-md">Đặt phòng</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <!-- end hotel booking -->
-                    <!-- start client says slider -->
-                    <div class="col-lg-12 col-md-12 col-sm-4">
-                        <div class="customer_says margin-top-65">
-                            <div class="section_title margin-bottom-30">
-                                <h5>Customer Review</h5>
-                            </div>
-                            <div class="section_description">
-                                <div id="customer_says_slider" class="carousel slide" data-ride="carousel" data-pause="none">
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner" role="listbox">
-                                        <div class="item active">
-                                            <div class="single_says">
-                                                <div class="customer_comment">
-                                                    <p>
-                                                        Semper ac dolor vitae msan. Cras interdum hendreritnia Phasellus accumsan urna vitae molestie interdum.
-                                                    </p>
-                                                    <p>
-                                                        Nam sed placerat libero, non eleifend dolor.
-                                                    </p>
-                                                </div>
-                                                <div class="customer_detail clearfix">
-                                                    <div class="customer_pic alignright-20">
-                                                        <a href="#"><img src="img/customer-says-one.png" alt=""></a>
-                                                    </div>
-                                                    <div class="customer_identity floatright">
-                                                        <h6>John Doe</h6>
-                                                        <p>www.john.com</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="single_says">
-                                                <div class="customer_comment">
-                                                    <p>
-                                                        Semper ac dolor vitae msan. Cras interdum hendreritnia Phasellus accumsan urna vitae molestie interdum.
-                                                    </p>
-                                                    <p>
-                                                        Nam sed placerat libero, non eleifend dolor.
-                                                    </p>
-                                                </div>
-                                                <div class="customer_detail clearfix">
-                                                    <div class="customer_pic alignright-20">
-                                                        <a href="#"><img src="img/customer-says-one.png" alt=""></a>
-                                                    </div>
-                                                    <div class="customer_identity floatright">
-                                                        <h6>John Doe</h6>
-                                                        <p>www.john.com</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Controls -->
-                                    <a class="slider_says left" href="#customer_says_slider" role="button" data-slide="prev">
-                                        <i class="fa fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="slider_says right" href="#customer_says_slider" role="button" data-slide="next">
-                                        <i class="fa fa-angle-right"></i>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end client says slider -->
                 </div>
             </div>
         </div>

@@ -12,15 +12,14 @@ $webSetting = queryExecute($getWebSettingQuery, false);
 $room = trim($_POST['room']);
 $bed = trim($_POST['bed']);
 
+$roomId = !empty($_SESSION[BOOK]['id']) ? $_SESSION[BOOK]['id'] : (!empty($_POST['id']) ? $_POST['id'] : "");
+$adult = !empty($_SESSION[BOOK]['adult']) ? $_SESSION[BOOK]['adult'] : (!empty($_POST['adult']) ? $_POST['adult'] : "");
+$children = !empty($_SESSION[BOOK]['children']) ? $_SESSION[BOOK]['children'] : (!empty($_POST['children']) ? $_POST['children'] : "");
+$arrival = !empty($_SESSION[BOOK]['arrival']) ? $_SESSION[BOOK]['arrival'] : (!empty($_POST['arrival']) ? $_POST['arrival'] : "");
+$departure = !empty($_SESSION[BOOK]['departure']) ? $_SESSION[BOOK]['departure'] : (!empty($_POST['departure']) ? $_POST['departure'] : "");
 if(isset($_SESSION[BOOK])) {
     $_SESSION[BOOK]['room'] = $room;
     $_SESSION[BOOK]['bed'] = $bed;
-
-    $roomId = isset($_SESSION[BOOK]['id']) ? $_SESSION[BOOK]['id'] : "";
-    $adult = isset($_SESSION[BOOK]['adult']) ? $_SESSION[BOOK]['adult'] : "";
-    $children = isset($_SESSION[BOOK]['children']) ? $_SESSION[BOOK]['children'] : "";
-    $arrival = isset($_SESSION[BOOK]['arrival']) ? $_SESSION[BOOK]['arrival'] : "";
-    $departure = isset($_SESSION[BOOK]['departure']) ? $_SESSION[BOOK]['departure'] : "";
 }else {
     header("Location: " . BASE_URL) . "?msg=Chọn phòng loại phòng trước khi thanh toán";
     die;
@@ -189,17 +188,17 @@ $services = queryExecute($getServiceQuery, true);
                                                 <input type="hidden" name="price" value="<?=$totalBill?>">
                                                 <div class="form-group col-lg-4 col-md-4 col-sm-4 icon_arrow">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" name="customer_name" placeholder="Họ và tên">
+                                                        <input type="text" class="form-control" value="<?= !empty($loggedInUser) ? $loggedInUser['name'] : '' ?>" name="customer_name" required placeholder="Họ và tên">
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-lg-4 col-md-4 col-sm-4 icon_arrow">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" name="email" placeholder="Email">
+                                                        <input type="text" class="form-control" value="<?= !empty($loggedInUser) ? $loggedInUser['email'] : '' ?>" name="email" required placeholder="Email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-lg-4 col-md-4 col-sm-4 icon_arrow">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" name="phone_number" placeholder="Số điện thoại">
+                                                        <input type="text" class="form-control" name="phone_number" value="<?= !empty($loggedInUser) ? $loggedInUser['phone'] : '' ?>" required placeholder="Số điện thoại">
                                                     </div>
                                                 </div>
                                             </div>
@@ -241,7 +240,7 @@ $services = queryExecute($getServiceQuery, true);
     <script>
         var adult = document.getElementById('adult');
         var test = '';
-        if(test !== '<?= $adult ?>') {
+        if(test !== '<?= $adult ?>' && adult) {
             adult.value = '<?= $adult ?>';
         }
         var children = document.getElementById('children');
@@ -250,7 +249,7 @@ $services = queryExecute($getServiceQuery, true);
         }
         var bed = document.getElementById('bed');
         if(test !== '<?= $bed ?>' && bed) {
-            bed.value = <?=$bed?>;
+            bed.value = '<?= !empty($bed) ? $bed : ''?>';
         }
         var room = document.getElementById('room');
         if(test !== '<?= $room ?>' && room) {
@@ -261,7 +260,6 @@ $services = queryExecute($getServiceQuery, true);
             sessionStorage.clear();
         }, 2500);
 
-        console.log('aaaaaaaaaaaaa')
         $(document).ready(function(){
             $('#next-tab').click(function(e){
                 if($('.nav-tabs > .active').next('li').hasClass('next-tab')){

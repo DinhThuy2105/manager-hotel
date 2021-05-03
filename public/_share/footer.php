@@ -41,10 +41,10 @@
             <div class="footer_top padding-top-80 clearfix">
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="footer_widget">
-                        <div class="footer_logo">
-                            <a href="#"><img src="<?=PUBLIC_URL?>img/footer-logo-one.png" alt=""></a>
+                        <div class="footer_logo text-center">
+                            <a href="#"><img src="<?=PUBLIC_URL?>img/footer-logo-one.png" style="width: 180px" alt=""></a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, conser adipiscing elit. In consectetur tincidunt dolor.</p>
+                        <p>Khách sạn Locania không chỉ đáp ứng hoàn hảo nhu cầu nghỉ ngơi của Quý khách mà còn mang đến những giây phút thư giãn giải trí tuyệt vời</p>
                         <ul>
                             <li>
                                 <P><i class="fa fa-map-marker"></i><?=$webSetting['address']?></P>
@@ -55,21 +55,21 @@
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="row">
                         <div class="footer_widget clearfix">
-                            <h5 class="padding-left-15">Quick Links</h5>
+                            <h5 class="padding-left-15">Quan tâm</h5>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <ul>
-                                    <li><a href="#">Rooms</a></li>
-                                    <li><a href="#">Food & Drinks</a></li>
-                                    <li><a href="#">Beach Venues</a></li>
-                                    <li><a href="#">Amenities</a></li>
+                                    <li><a href="#">Đặt phòng</a></li>
+                                    <li><a href="#">Không gian</a></li>
+                                    <li><a href="#">Vị trí</a></li>
+                                    <li><a href="#">Đồ ăn</a></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6 col-md-6 sol-sm-6">
                                 <ul>
-                                    <li><a href="#">Noordwijk</a></li>
-                                    <li><a href="#">Wellness</a></li>
-                                    <li><a href="#">Manifesto</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Hình ảnh</a></li>
+                                    <li><a href="#">Giới thiệu</a></li>
+                                    <li><a href="#">Tin tức</a></li>
+                                    <li><a href="#">Liên hệ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="container">
                     <div class="footer_copyright margin-tb-50 content-center">
-                        <p>© 2015 <a href="#">Hotelbooking</a>. All rights reserved</p>
+                        <p>© 2021 <a href="#">Hotelbooking</a>. All rights reserved</p>
                     </div>
                 </div>
             </div>

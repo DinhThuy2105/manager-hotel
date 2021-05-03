@@ -16,7 +16,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <div class="site_logo fix">
-                                <a id="brand" class="clearfix navbar-brand border-right-whitesmoke" href="<?= BASE_URL?>"><img src="<?= BASE_URL . $webSetting['logo'] ?>" alt="Trips"></a>
+                                <a id="brand" class="clearfix navbar-brand border-right-whitesmoke" href="<?= BASE_URL?>"><img style="width: 80px" src="<?= BASE_URL . $webSetting['logo'] ?>" alt="Trips"></a>
                             </div>
                         </div>
 
@@ -24,18 +24,18 @@
                         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li role="presentation">
-                                    <a href="<?=BASE_URL?>">Home</a>
+                                    <a href="<?=BASE_URL?>">Trang chủ</a>
                                 </li>
-                                <li><a href="<?= BASE_URL . 'accomodation.php'?>">Accomodation</a></li>
-                                <li><a href="<?= BASE_URL . 'gallery.php'?>">Gallery</a></li>
-                                <li><a href="<?= BASE_URL .'about-us.php'?>">About US</a></li>
-                                <li><a href="<?= BASE_URL . 'blog.php'?>">Blog</a></li>
-                                <li><a href="<?= BASE_URL . 'contact-us.php'?>">Contacts</a></li>
+                                <li><a href="<?= BASE_URL . 'accomodation.php'?>">Đặt phòng</a></li>
+                                <li><a href="<?= BASE_URL . 'gallery.php'?>">Hình ảnh</a></li>
+                                <li><a href="<?= BASE_URL .'about-us.php'?>">Giới thiệu</a></li>
+                                <li><a href="<?= BASE_URL . 'blog.php'?>">Tin tức</a></li>
+                                <li><a href="<?= BASE_URL . 'contact-us.php'?>">Liên hệ</a></li>
 
                                 <?php if ($loggedInUser) : ?>
                                     <li role="presentation" class="dropdown">
                                         <a id="drop2" href="#" class="dropdown-toggle text-primary" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                            Hi, <?= $loggedInUser['name']; ?>
+                                            Chào, <?= $loggedInUser['name']; ?>
                                         </a>
                                         <ul id="menu2" class="dropdown-menu" role="menu">
                                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thông tin cá nhân</a></li>
@@ -47,7 +47,7 @@
                                         </ul>
                                     </li>
                                 <?php else : ?>
-                                    <li><a href="<?=LOGIN_URL.'login.php'?>" class="nav-link text-primary login-color">Login</a></li>
+                                    <li><a href="<?=LOGIN_URL.'login.php'?>" class="nav-link text-primary login-color">Đăng nhập</a></li>
                                 <?php endif ?>
                             </ul>
                         </div><!-- /.navbar-collapse -->

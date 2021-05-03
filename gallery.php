@@ -25,7 +25,7 @@ $webSetting = queryExecute($getWebSettingQuery, false);
         <div class="container-fluid">
             <div class="row">
                 <div class="breadcrumb_main nice_title">
-                    <h2>Gallery</h2>
+                    <h2>Hình ảnh</h2>
                     <!-- special offer start -->
                     <div class="special_offer_main">
                         <div class="container">
