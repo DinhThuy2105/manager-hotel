@@ -2,11 +2,10 @@
 session_start();
 include_once "../../config/utils.php";
 checkAdminLoggedIn();
-
 $id = trim($_POST['id']);
 $title = trim($_POST['title']);
 $author_id = trim($_POST['author_id']);
-$content = trim($_POST['news_content'], );
+$content = trim($_POST['news_content']);
 $feature_image = $_FILES['feature_image'];
 
 // kiểm tra tin tức có tồn tại hay không
@@ -30,11 +29,11 @@ if($feature_image['size'] > 0){
 }
 
 $updateNewsQuery = "update news set
-                        author_id = '$author_id',
+                        author_id = $author_id,
                         feature_image = '$filename',
                         news_content = '$content',
                         title = '$title'
-                    where id = '$id'";
+                    where id = $id";
 queryExecute($updateNewsQuery, false);
 header("location: " . ADMIN_URL . "news");
 die;

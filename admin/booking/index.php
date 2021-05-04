@@ -90,8 +90,8 @@ $booking = queryExecute($getBookingQuery, true);
                                     <div class="form-group col-4">
                                         <select name="statusSearch" class="form-control">
                                             <option selected value="">Tất cả</option>
-                                            <option value="<?= ACTIVE ?>">Kích hoạt</option>
-                                            <option value="<?= INACTIVE ?>">Không kích hoạt</option>
+                                            <option value="<?= ACTIVE ?>">Đã xác nhận</option>
+                                            <option value="<?= INACTIVE ?>">Chưa xác nhận</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-2">
@@ -125,9 +125,9 @@ $booking = queryExecute($getBookingQuery, true);
                                             <td><?= $book['roomTypeName'] ?></td>
                                             <td>
                                                 <?php if ($book['status'] == 1) { ?>
-                                                    <span class="">Đã trả lời</span>
+                                                    <span class="">Đã xác nhận</span>
                                                 <?php } else if ($book['status'] == 0) { ?>
-                                                    <span class="text-danger">Chưa trả lời</span>
+                                                    <span class="text-danger">Chưa xác nhận</span>
                                                 <?php } ?>
                                             </td>
                                             <td><?= $book['created_date'] ?></td>

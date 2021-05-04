@@ -52,14 +52,27 @@ $booking = queryExecute($getBookingQuery, false);
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <form id="check-booking" action="<?= ADMIN_URL . 'booking/save-check.php' ?>" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Trạng thái trả lời<span class="text-danger">*</span></label>
+                                    <label for="">Trạng thái đặt phòng<span class="text-danger">*</span></label>
                                     <select name="status" id="status" class="form-control">
                                         <option value="">Chọn trạng thái</option>
-                                        <option value="<?= ACTIVE ?>">Đã xác nhận</option>
-                                        <option value="<?= INACTIVE ?>">Chưa xác nhận</option>
+                                        <?php if(!empty($booking['status'])): ?>
+                                            <?php if($booking['status'] == '1'): ?>
+                                                <option value="<?= ACTIVE ?>" selected>Đã xác nhận</option>
+                                                <option value="<?= INACTIVE ?>">Chưa xác nhận</option>
+                                            <?php else : ?>
+                                                <option value="<?= ACTIVE ?>">Đã xác nhận</option>
+                                                <option value="<?= INACTIVE ?>" selected>Chưa xác nhận</option>
+                                            <?php endif ?>
+
+                                        <?php else : ?>
+                                            <option value="<?= ACTIVE ?>">Đã xác nhận</option>
+                                            <option value="<?= INACTIVE ?>">Chưa xác nhận</option>
+                                        <?php endif ?>
+                                        
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -71,15 +84,27 @@ $booking = queryExecute($getBookingQuery, false);
                                     <label for="">Khách hàng đã tới chưa?<span class="text-danger">*</span></label>
                                     <select name="checked_in" id="checked_in" class="form-control">
                                         <option value="">Chọn trạng thái</option>
-                                        <option value="<?= ACTIVE ?>">Đã tới</option>
-                                        <option value="<?= INACTIVE ?>">Chưa tới</option>
+                                        <?php if(!empty($booking['checked_in'])): ?>
+                                            <?php if($booking['checked_in'] == '1'): ?>
+                                                <option value="<?= ACTIVE ?>" selected>Đã tới</option>
+                                                <option value="<?= INACTIVE ?>">Chưa tới</option>
+                                            <?php else : ?>
+                                                <option value="<?= ACTIVE ?>">Đã tới</option>
+                                                <option value="<?= INACTIVE ?>" selected>Chưa tới</option>
+                                            <?php endif ?>
+
+                                        <?php else : ?>
+                                            <option value="<?= ACTIVE ?>">Đã tới</option>
+                                            <option value="<?= INACTIVE ?>">Chưa tới</option>
+                                        <?php endif ?>
+                                        
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="text-capitalize font-weight-bold">Thời điểm tới thực tế<span class="text-danger">*</span></label>
                                     <div class="form-group">
                                         <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" name="start_time" />
+                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" name="start_time" value="<?=date('d-m-Y H:s', strtotime($booking['checked_in_date']))?>" />
                                             <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                             </div>
@@ -99,7 +124,7 @@ $booking = queryExecute($getBookingQuery, false);
                                 </div>
                                 <div class="form-group">
                                     <label for="">Trả lời khách hàng<span class="text-danger">*</span></label>
-                                    <textarea name="reply_messages" rows="7" class="form-control"></textarea>
+                                    <textarea name="reply_messages" rows="7" class="form-control"><?=$booking['reply_messages']?></textarea>
                                 </div>
                             </div>
                             <div class="col d-flex justify-content-end">
