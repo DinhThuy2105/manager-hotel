@@ -83,10 +83,10 @@ $services = queryExecute($getServiceQuery, true);
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="booking_info" class="active">
-                            <a href="#booking_info" aria-controls="booking_info" role="tab" data-toggle="tab"><i>1</i><span>booking info</span></a>
+                            <a href="#booking_info" aria-controls="booking_info" role="tab" data-toggle="tab"><i>1</i><span>Thông tin đặt phòng</span></a>
                         </li>
                         <li role="personal_info">
-                            <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab"><i>2</i><span>personal info</span></a>
+                            <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab"><i>2</i><span>Thông tin cá nhân</span></a>
                         </li>
                     </ul>
 
@@ -103,7 +103,7 @@ $services = queryExecute($getServiceQuery, true);
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12">
                                                     <div class="section_title clearfix margin-bottom-5">
-                                                        <h5 class="floatleft"><?= $roomTypes['name'] ?><span class="price floatright margin-left-15">($180 <sup class="day">/night</sup>)</span></h5>
+                                                        <h5 class="floatleft"><?= $roomTypes['name'] ?><span class="price floatright margin-left-15">($180 <sup class="day">/ngày</sup>)</span></h5>
                                                     </div>
                                                 </div>
                                                 <div class="list-services col-lg-12 col-md-12">
@@ -121,13 +121,8 @@ $services = queryExecute($getServiceQuery, true);
                                         <div class="about_booking_room clearfix margin-top-30">
                                             <div class="col-lg-7 col-md-7 col-sm-6">
                                                 <div class="booking_room_details">
-                                                    <h5>Booking room detail</h5>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil atque modi velit molestiae, repellendus iure sint possimus cumque, provident, dolorum unde laboriosam ut eius ex maiores quod repudiandae aut asperiores?
-                                                    </p>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil atque modi velit molestiae, repellendus iure sint possimus cumque, provident, dolorum unde laboriosam ut eius ex maiores quod repudiandae aut asperiores?
-                                                    </p>
+                                                    <h5>Thông tin chi tiết của phòng</h5>
+                                                    <p><?= $roomTypes['description'] ?></p>
                                                 </div>
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-sm-6">
@@ -138,8 +133,8 @@ $services = queryExecute($getServiceQuery, true);
                                                                 <table class="table table-bordered">
                                                                     <tr class="room_table">
                                                                         <td class=""><span class="imp_table_text"><?=$room?> phòng</span> <br><?=$adult?> người lớn & <?=$children?> trẻ em</td>
-                                                                        <td class=""><span class="imp_table_text"><?=$roomTypes['price']?>$</span> <br> rate</td>
-                                                                        <td class=""><?php echo $night = (strtotime($departure) - strtotime($arrival)) / 86400;?><br>night</td>
+                                                                        <td class=""><span class="imp_table_text"><?=$roomTypes['price']?>$</span> <br> Giá</td>
+                                                                        <td class=""><?php echo $night = (strtotime($departure) - strtotime($arrival)) / 86400;?><br>ngày</td>
                                                                         <td class=""><span class="imp_table_text"><?php echo $firstBill = $night * $roomTypes['price'] ?>$</span></td>
                                                                     </tr>
                                                                     <tr class="tax_table">
@@ -165,7 +160,7 @@ $services = queryExecute($getServiceQuery, true);
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
                                             <div class="booking_next_btn padding-top-30 margin-top-20 clearfix border-top-whitesmoke">
-                                                <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab" id="next-tab" class="next-tab btn btn-warning btn-sm floatright">Next</a>
+                                                <a href="#personal_info" aria-controls="personal_info" role="tab" data-toggle="tab" id="next-tab" class="next-tab btn btn-warning btn-sm floatright">Tiếp tục</a>
                                             </div>
                                         </div>
                                     </div>
@@ -212,7 +207,7 @@ $services = queryExecute($getServiceQuery, true);
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12">
                                                     <div class="booking_next_btn padding-top-30 margin-top-50 clearfix border-top-whitesmoke">
-                                                        <a href="#" class="btn btn-warning btn-sm btn-info">back</a>
+                                                        <a href="#" class="btn btn-warning btn-sm btn-info">Trở lại</a>
                                                         <button type="submit" class="btn btn-warning floatright">Xác Nhận Đặt Phòng</button>
                                                     </div>
                                                 </div>

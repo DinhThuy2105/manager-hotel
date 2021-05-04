@@ -117,7 +117,7 @@ $roomTypes = queryExecute($getRoomTypesQuery, true);
                                     <?= $ba['secondContent'] ?>
                                 </div>
                                 <div class="tp-caption lfb carousel-caption-inner" data-x="105" data-y="313" data-speed="1300" data-start="1700" data-easing="easeInOutBack" style="background: #f7c411; padding: 10px; cursor: pointer;">
-                                    <a href="<?= $webSetting['explore_url'] ?>" class="" style="background: #f7c411; border-radius: 0; color: #313a45; display: inline-block;  font-size: 18px; padding: 8px 34px; text-transform: uppercase; border: 1px solid #9e811a;">Explore IT</a>
+                                    <a href="<?= $webSetting['explore_url'] ?>" class="" style="background: #f7c411; border-radius: 0; color: #313a45; display: inline-block;  font-size: 18px; padding: 8px 34px; text-transform: uppercase; border: 1px solid #9e811a;">Khám phá</a>
                                 </div>
                             </li>
                         <?php endforeach; ?>

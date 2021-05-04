@@ -65,7 +65,7 @@ $booking = queryExecute($getBookingQuery, false);
                                 <div class="form-group">
                                     <label for="">Nhân viên trả lời<span class="text-danger">*</span></label>
                                     <input type="hidden" name="reply_by" value="<?= $_SESSION[AUTH]['id'] ?>">
-                                    <input type="text" class="form-control" value="<?= $_SESSION[AUTH]['name'] ?>">
+                                    <input type="text" require class="form-control" value="<?= $_SESSION[AUTH]['name'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Khách hàng đã tới chưa?<span class="text-danger">*</span></label>

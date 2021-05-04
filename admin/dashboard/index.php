@@ -103,19 +103,6 @@ $banner = queryExecute($getBannerQuery, true);
                         </div>
                         <div class="col-lg-3 col-4">
                             <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3><?= count($contacts); ?></h3>
-                                    <p>Liên hệ</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fal fa-address-card"></i>
-                                </div>
-                                <a href="<?= ADMIN_URL . 'contacts' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-4">
-                            <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     <h3><?= count($news); ?></h3>
@@ -127,22 +114,6 @@ $banner = queryExecute($getBannerQuery, true);
                                 <a href="<?= ADMIN_URL . 'news' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-4">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3><?= count($feedbacks); ?></h3>
-                                    <p>Phản hồi</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="far fa-comment-alt-dots"></i>
-                                </div>
-                                <a href="<?= ADMIN_URL . 'customer_feedbacks' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Row 2 -->
-                    <div class="row">
                         <div class="col-lg-3 col-4">
                             <!-- small box -->
                             <div class="small-box bg-success">
@@ -169,6 +140,9 @@ $banner = queryExecute($getBannerQuery, true);
                                 <a href="<?= ADMIN_URL . 'web_settings' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="row">
                         <div class="col-lg-3 col-4">
                             <!-- small box -->
                             <div class="small-box bg-danger">
@@ -195,9 +169,6 @@ $banner = queryExecute($getBannerQuery, true);
                                 <a href="<?= ADMIN_URL . 'room_types' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <!-- Row 3 -->
-                    <div class="row">
                         <div class="col-lg-3 col-4">
                             <!-- small box -->
                             <div class="small-box bg-info">
@@ -222,19 +193,6 @@ $banner = queryExecute($getBannerQuery, true);
                                     <i class="fal fa-bed-bunk"></i>
                                 </div>
                                 <a href="<?= ADMIN_URL . 'booking' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-4">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3><?= count($banner); ?></h3>
-                                    <p>Banner</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fad fa-photo-video"></i>
-                                </div>
-                                <a href="<?= ADMIN_URL . 'banner_slice' ?>" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

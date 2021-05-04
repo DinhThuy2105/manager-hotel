@@ -76,10 +76,10 @@ $roomGalleries = queryExecute($getRoomGalleriesQuery, true);
                 <div class="col-lg-9 col-md-9">
                     <div class="deluxe_room_detail">
                         <div class="section_title content-left margin-bottom-5">
-                            <h5><?= $roomTypes['name'] ?> Detail <span class="price floatright">$ <?= $roomTypes['price'] ?></span> <br> <span class="day floatright">/ night</span></h5>
+                            <h5><?= $roomTypes['name'] ?> Chi tiết <span class="price floatright">$ <?= $roomTypes['price'] ?></span> <br> <span class="day floatright">/ ngày</span></h5>
                         </div>
                         <div class="section_content">
-                            <p>Checkout the latest deal</p>
+                            <p>Các hình ảnh</p>
                             <div class="showcase">
                                 <div class="section_description">
                                     <div class="row">
@@ -212,69 +212,76 @@ $roomGalleries = queryExecute($getRoomGalleriesQuery, true);
                                             <p>Đặt phòng</p>
                                         </div>
                                     </div>
-                                    <div class="form-group col-lg-12 col-md-12">
-                                        <div class="input-group border-bottom-dark-2">
-                                            <input required class="date-picker" placeholder="Ngày đến" id="datepicker" type="text" name="arrival" value="<?= $arrival ?>" />
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-lg-12 col-md-12">
-                                        <div class="input-group border-bottom-dark-2">
-                                            <input required class="date-picker" placeholder="Ngày đi" id="datepicker1" type="text" name="departure" value="<?= $departure ?>" />
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="row">
-                                            <div class="form-group col-lg-6 col-md-6 icon_arrow">
-                                                <div class="input-group border-bottom-dark-2">
-                                                    <select class="form-control" name="room" id="room" required>
-                                                        <option selected="selected" disabled="disabled">Số phòng</option>
-                                                        <option value="1">1 phòng</option>
-                                                        <option value="2">2 phòng</option>
-                                                        <option value="3">3 phòng</option>
-                                                        <option value="4">4 phòng</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-6 col-md-6 icon_arrow">
-                                                <div class="input-group border-bottom-dark-2">
-                                                    <select class="form-control" name="bed" id="bed" required>
-                                                        <option selected="selected" disabled="disabled">Số giường</option>
-                                                        <option value="1">1 giường</option>
-                                                        <option value="2">2 giường</option>
-                                                        <option value="3">3 giường</option>
-                                                        <option value="4">4 giường</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-6 col-md-6 icon_arrow">
-                                                <div class="input-group border-bottom-dark-2">
-                                                    <select class="form-control" name="adult" id="adult">
-                                                        <option value="" selected>Người lớn</option>
-                                                        <option value="1">1 Người</option>
-                                                        <option value="2">2 Người</option>
-                                                        <option value="3">3 Người</option>
-                                                        <option value="4">4 Người</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-6 col-md-6 icon_arrow">
-                                                <div class="input-group border-bottom-dark-2">
-                                                    <select class="form-control" name="children" id="children">
-                                                        <option value="" selected>Trẻ nhỏ</option>
-                                                        <option value="1">1 Trẻ</option>
-                                                        <option value="2">2 Trẻ</option>
-                                                        <option value="3">3 Trẻ</option>
-                                                        <option value="4">4 Trẻ</option>
-                                                    </select>
-                                                </div>
+                                    <?php if ($loggedInUser) : ?>
+                                        <div class="form-group col-lg-12 col-md-12">
+                                            <div class="input-group border-bottom-dark-2">
+                                                <input required class="date-picker" placeholder="Ngày đến" id="datepicker" type="text" name="arrival" value="<?= $arrival ?>" />
+                                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 text-center">
-                                        <button type="submit" class="btn btn-warning btn-md">Đặt phòng</button>
-                                    </div>
+                                        <div class="form-group col-lg-12 col-md-12">
+                                            <div class="input-group border-bottom-dark-2">
+                                                <input required class="date-picker" placeholder="Ngày đi" id="datepicker1" type="text" name="departure" value="<?= $departure ?>" />
+                                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="row">
+                                                <div class="form-group col-lg-6 col-md-6 icon_arrow">
+                                                    <div class="input-group border-bottom-dark-2">
+                                                        <select class="form-control" name="room" id="room" required>
+                                                            <option selected="selected" disabled="disabled">Số phòng</option>
+                                                            <option value="1">1 phòng</option>
+                                                            <option value="2">2 phòng</option>
+                                                            <option value="3">3 phòng</option>
+                                                            <option value="4">4 phòng</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-lg-6 col-md-6 icon_arrow">
+                                                    <div class="input-group border-bottom-dark-2">
+                                                        <select class="form-control" name="bed" id="bed" required>
+                                                            <option selected="selected" disabled="disabled">Số giường</option>
+                                                            <option value="1">1 giường</option>
+                                                            <option value="2">2 giường</option>
+                                                            <option value="3">3 giường</option>
+                                                            <option value="4">4 giường</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-lg-6 col-md-6 icon_arrow">
+                                                    <div class="input-group border-bottom-dark-2">
+                                                        <select class="form-control" name="adult" id="adult">
+                                                            <option value="" selected>Người lớn</option>
+                                                            <option value="1">1 Người</option>
+                                                            <option value="2">2 Người</option>
+                                                            <option value="3">3 Người</option>
+                                                            <option value="4">4 Người</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-lg-6 col-md-6 icon_arrow">
+                                                    <div class="input-group border-bottom-dark-2">
+                                                        <select class="form-control" name="children" id="children">
+                                                            <option value="" selected>Trẻ nhỏ</option>
+                                                            <option value="1">1 Trẻ</option>
+                                                            <option value="2">2 Trẻ</option>
+                                                            <option value="3">3 Trẻ</option>
+                                                            <option value="4">4 Trẻ</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 text-center">
+                                            <button type="submit" class="btn btn-warning btn-md">Đặt phòng</button>
+                                        </div>
+                                    <?php else : ?>
+                                        <br>
+                                        <br>
+                                        <p class="mt-5">Vui lòng <a href="<?=LOGIN_URL.'login.php'?>" class="nav-link text-primary login-color">Đăng nhập</a> để đặt phòng</p>
+                                    <?php endif ?>
+  
                                 </form>
                             </div>
                         </div>

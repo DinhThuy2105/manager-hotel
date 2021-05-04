@@ -2,8 +2,8 @@
 session_start();
 include_once "../../config/utils.php";
 checkAdminLoggedIn();
-$name = trim($_POST['name']);
-$email = trim($_POST['email']);
+$status = trim($_POST['status']);
+$reply_by = trim($_POST['reply_by']);
 $phone_number = trim($_POST['phone_number']);
 $subject = trim($_POST['subject']);
 $message = trim($_POST['message']);
@@ -45,7 +45,7 @@ if (strlen($message) < 2) {
 }
 
 if ($nameerr . $emailerr . $phone_numbererr . $subjecterr . $messageerr != "") {
-    header('location: ' . ADMIN_URL . "contacts/add-form.php?nameerr=$nameerr&emailerr=$emailerr&phone_number=$phone_numbererr&subject=$subjecterr&message=$messageerr");
+    header('location: ' . ADMIN_URL . "booking/check-form.php?nameerr=$nameerr&emailerr=$emailerr&phone_number=$phone_numbererr&subject=$subjecterr&message=$messageerr");
     die;
 }
 
@@ -58,5 +58,5 @@ $insertContactQuery = "insert into contacts
 $reply_now = 'Xin cảm ơn bạn đã phản hồi tới chúng tôi, bạn sẽ nhận được phản hồi của chúng tôi sớm nhất. Trân trọng cảm ơn';
 queryExecute($insertContactQuery, false);
 // header("location: " . BASE_URL . "contact-us.php?reply_now=$reply_now");
-header("location: " . BASE_URL . "contact-us.php");
+header("location: " . BASE_URL . "booking/index.php");
 die;

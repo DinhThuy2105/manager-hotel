@@ -1,5 +1,5 @@
 <!-- start contact us area -->
-<section class="contact_us_area content-left">
+<!-- <section class="contact_us_area content-left">
     <div class="container">
         <div class="contact_us clearfix">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- end contact us area -->
 
 <!-- Start footer -->
@@ -42,14 +42,26 @@
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="footer_widget">
                         <div class="footer_logo text-center">
-                            <a href="#"><img src="<?=PUBLIC_URL?>img/footer-logo-one.png" style="width: 180px" alt=""></a>
+                            <a href="#"><img src="<?=PUBLIC_URL?>img/footer-logo-one.png" style="width: 150px" alt=""></a>
                         </div>
                         <p>Khách sạn Locania không chỉ đáp ứng hoàn hảo nhu cầu nghỉ ngơi của Quý khách mà còn mang đến những giây phút thư giãn giải trí tuyệt vời</p>
-                        <ul>
-                            <li>
-                                <P><i class="fa fa-map-marker"></i><?=$webSetting['address']?></P>
-                            </li>
-                        </ul>
+                        <div >
+                            <div class="row" style="    color: #d5d2c5;">
+                                <div class="footer_widget clearfix">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <ul>
+                                            <li><i class="fa fa-map-marker mr-2" style="padding-right: 5px"></i><?=$webSetting['address']?></li>
+                                            <li><i class="fa fa-envelope mr-2" style="padding-right: 5px"></i><?=$webSetting['email']?></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 sol-sm-6">
+                                        <ul>
+                                            <li><i class="fa fa-phone mr-2" style="padding-right: 5px"></i><?= $webSetting['phone_number'] ?></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
